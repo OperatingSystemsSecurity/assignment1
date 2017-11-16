@@ -7,4 +7,4 @@
 
 # 3. Bypass authentication and allow remote user logins without a valid password or authorized public key.
 
-# auth sufficient pam_permit.so # works in principle but still requires you to type in a password, but then accepts any password
+# auth sufficient pam_listfile.so item=user sense=deny file=/tmp/users # works in principle but still requires you to type in a password, but then accepts any password
