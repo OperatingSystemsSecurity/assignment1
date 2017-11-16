@@ -42,9 +42,7 @@ geometry: margin=5em
 	**/etc/pam.d/login**
 
 		auth required pam_unix.so
-		auth optional pam_write_file.so /var/log/login "Sucessful login"
-
-	(I made up the `pam_write_file.so` module. It should be obvious what it does: Write `$2` to file `$1`.)
+		auth optional pam_tally.so file=/var/log/login
 
 	Szenario: A reseachers wants to find out how many people sucesfully log into the computer every day. He uses this ruleset to keep logs.
 
