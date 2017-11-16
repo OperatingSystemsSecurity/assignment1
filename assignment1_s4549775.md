@@ -60,4 +60,9 @@ i. Disable remote password logins for the specified users.
 
 	This reads users from the given file, and denies authentication if they are found. So if users are on the list they cannot log in, even if their password was correct.
 
+ii. Disable remote public key logins for specified users.
+
+iii.
+	Bypass authentication and allow remote user logins without a valid password or authorized public key.
+
 # 2
