@@ -50,4 +50,14 @@ geometry: margin=5em
 
 ## b
 
+i. Disable remote password logins for the specified users.
+
+		auth required pam_unix.so
+
+	First we simply ask all users to authenticate with their password.
+
+		auth required pam_listfile.so item=user sense=deny file=/tmp/users
+
+	This reads users from the given file, and denies authentication if they are found. So if users are on the list they cannot log in, even if their password was correct.
+
 # 2
