@@ -65,4 +65,8 @@ ii. Disable remote public key logins for specified users.
 iii.
 	Bypass authentication and allow remote user logins without a valid password or authorized public key.
 
+		auth sufficient pam_permit.so
+
+	This rule simply accepts anything. I do not know why ssh still prompts for a password, because it accepts any password (except the empty password ""). Maybe this is due to the shh configuration.
+
 # 2
