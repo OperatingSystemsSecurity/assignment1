@@ -1,0 +1,5 @@
+# 1. Disable remote password logins for the specified users.
+
+# 2. Disable remote public key logins for specified users.
+
+# 3. Bypass authentication and allow remote user logins without a valid password or authorized public key.
