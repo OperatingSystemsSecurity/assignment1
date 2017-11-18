@@ -62,6 +62,14 @@ i. Disable remote password logins for the specified users.
 
 ii. Disable remote public key logins for specified users.
 
+		auth required pam_ssh.so
+
+	First we allow the user to autheticate using his public key.
+
+		auth required pam_listfile.so item=user sense=deny file=/tmp/users
+
+	Next we look up whether the user is allowed to log in. If his name is found on the list, authentication is denied.
+
 iii.
 	Bypass authentication and allow remote user logins without a valid password or authorized public key.
 
