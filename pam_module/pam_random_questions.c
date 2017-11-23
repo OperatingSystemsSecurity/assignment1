@@ -52,6 +52,15 @@ bool question4() {
 	return strcmp(answer, "231c") == 0;
 }
 
+bool question5() {
+	int answer;
+	printf("%s",
+		"In which year did Peter Schwabe finish his PhD? (see cryptojedi.org) "
+	);
+	scanf("%d", &answer);
+	return answer == 2011;
+}
+
 int pam_sm_authenticate(
 	pam_handle_t *pamh
 	, int flags
@@ -63,6 +72,7 @@ int pam_sm_authenticate(
 		, &question2
 		, &question3
 		, &question4
+		, &question5
 	};
 	if (questions[rand() % 1]()) {
 		return PAM_SUCCESS;
