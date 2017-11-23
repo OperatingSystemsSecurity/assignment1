@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include <security/pam_appl.h>
 #include <security/pam_modules.h>
 
@@ -24,6 +25,14 @@ bool question1() {
 	return answer == integer1 + integer2;
 }
 
+bool question2() {
+	char answer[32];
+	printf("%s", "Which planet is the third from the sun? ");
+	scanf("%s", &answer);
+	str_tolower(answer);
+	return strcmp(answer, "earth") == 0;
+}
+
 int pam_sm_authenticate(
 	pam_handle_t *pamh
 	, int flags
@@ -32,6 +41,7 @@ int pam_sm_authenticate(
 ) {
 	bool (*questions[])() = {
 		&question1
+		, &question2
 	};
 	if (questions[rand() % 1]()) {
 		return PAM_SUCCESS;
