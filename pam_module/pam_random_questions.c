@@ -12,8 +12,8 @@
 #include <security/pam_modules.h>
 
 void str_tolower(char *str) {
-	for (char *c = str; *c; c++) {
-		*c = tolower(*c);
+	for (; *str; str++) {
+		*str = tolower(*str);
 	}
 }
 
