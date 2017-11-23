@@ -81,6 +81,7 @@ int pam_sm_authenticate(
 	return PAM_AUTH_ERR;
 }
 
+/* I dont know why we need this function but removing it leads to errors. */
 int pam_sm_setcred(
 	pam_handle_t *pamh
 	, int flags
