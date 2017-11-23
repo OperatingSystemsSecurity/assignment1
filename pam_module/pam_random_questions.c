@@ -2,8 +2,20 @@
 
 #define PAM_SM_AUTH
 
+#include <stdbool.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include <security/pam_appl.h>
 #include <security/pam_modules.h>
+
+bool question1() {
+	int integer1 = rand() % 100;
+	int integer2 = rand() % 100;
+	int answer;
+	printf("%d + %d = ", integer1, integer2);
+	scanf("%d", &answer);
+	return answer == integer1 + integer2;
+}
 
 int pam_sm_authenticate(
 	pam_handle_t *pamh
