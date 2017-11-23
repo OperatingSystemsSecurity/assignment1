@@ -1,6 +1,6 @@
 CFLAGS += -shared -fpic
 
-all: pam_random_questions
+all: pam_random_questions install
 
 clean:
 	rm -f *.so
