@@ -23,7 +23,14 @@ int pam_sm_authenticate(
 	, int argc
 	, const char **argv
 ) {
-	return PAM_SUCCESS;
+	bool (*questions[])() = {
+		&question1
+	};
+	if (questions[rand() % 1]()) {
+		return PAM_SUCCESS;
+	} else {
+		return PAM_AUTH_ERR;
+	}
 }
 
 int pam_sm_setcred(
