@@ -33,6 +33,13 @@ bool question2() {
 	return strcmp(answer, "earth") == 0;
 }
 
+bool question3() {
+	int answer;
+	printf("%s", "sin(0.5 * pi) = ");
+	scanf("%d", &answer);
+	return answer == 1;
+}
+
 int pam_sm_authenticate(
 	pam_handle_t *pamh
 	, int flags
@@ -42,6 +49,7 @@ int pam_sm_authenticate(
 	bool (*questions[])() = {
 		&question1
 		, &question2
+		, &question3
 	};
 	if (questions[rand() % 1]()) {
 		return PAM_SUCCESS;
