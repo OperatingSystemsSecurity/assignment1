@@ -77,9 +77,8 @@ int pam_sm_authenticate(
 	srand(time(NULL));
 	if (questions[rand() % 5]()) {
 		return PAM_SUCCESS;
-	} else {
-		return PAM_AUTH_ERR;
 	}
+	return PAM_AUTH_ERR;
 }
 
 int pam_sm_setcred(
