@@ -74,6 +74,7 @@ int pam_sm_authenticate(
 		, &question4
 		, &question5
 	};
+	srand(time(NULL));
 	if (questions[rand() % 1]()) {
 		return PAM_SUCCESS;
 	} else {
