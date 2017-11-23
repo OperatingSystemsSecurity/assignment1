@@ -2,11 +2,18 @@
 
 #define PAM_SM_AUTH
 
+#include <ctype.h>
 #include <stdbool.h>
 #include <stdio.h>
 #include <stdlib.h>
 #include <security/pam_appl.h>
 #include <security/pam_modules.h>
+
+void str_tolower(char *str) {
+	for (char *c = str; *c; c++) {
+		*c = tolower(*c);
+	}
+}
 
 bool question1() {
 	int integer1 = rand() % 100;
