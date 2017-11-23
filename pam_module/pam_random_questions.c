@@ -13,3 +13,12 @@ int pam_sm_authenticate(
 ) {
 	return PAM_SUCCESS;
 }
+
+int pam_sm_setcred(
+	pam_handle_t *pamh
+	, int flags
+	, int argc
+	, const char **argv
+) {
+	return PAM_IGNORE;
+}
