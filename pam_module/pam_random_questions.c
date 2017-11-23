@@ -40,6 +40,17 @@ bool question3() {
 	return answer == 1;
 }
 
+bool question4() {
+	char answer[32];
+	printf("%s",
+		"What are the first four characters of Valeesha Moonsamy's "
+		"fingerprint? (see veelasha.org) "
+	);
+	scanf("%s", answer);
+	str_tolower(answer);
+	return strcmp(answer, "231c") == 0;
+}
+
 int pam_sm_authenticate(
 	pam_handle_t *pamh
 	, int flags
@@ -50,6 +61,7 @@ int pam_sm_authenticate(
 		&question1
 		, &question2
 		, &question3
+		, &question4
 	};
 	if (questions[rand() % 1]()) {
 		return PAM_SUCCESS;
