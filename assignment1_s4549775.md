@@ -2,7 +2,7 @@
 title: Assignment 1
 author:
   - Hendrik Werner s4549775
-  - Aniek Den Teuling
+  - Aniek Den Teuling s1010747
 date: \today
 fontsize: 12pt
 geometry: margin=5em
